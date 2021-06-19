@@ -1,11 +1,8 @@
 const { ipcRenderer } = require("electron")
 
-ipcRenderer.on('take-reply', (event, arg) => {
-  console.log(arg)
+ipcRenderer.on('clickEvent', (event, message) => {
+  console.log(message)
 })
-ipcRenderer.send('send-message', 'send')
-
-
 
 // TODO - add functionality for numbers and symbols
 let total = 0

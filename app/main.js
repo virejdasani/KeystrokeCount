@@ -23,9 +23,14 @@ const assetsDirectory = path.join(__dirname, 'assets')
 let tray = undefined
 let window = undefined
 
-// For ioHook
-ioHook.on('mousemove', (event) => {
-  // console.log(event)
+var clicks = 0
+
+// For mouse click
+ioHook.on('mouseclick', (event) => {
+  console.log(event)
+  clicks += 1
+  // This sends the clicks to index.js where this num of clicks are logged
+  window.webContents.send('clickEvent', clicks)
 });
 
 // Register and start hook
@@ -33,11 +38,6 @@ ioHook.start()
 
 // Alternatively, pass true to start in DEBUG mode.
 ioHook.start(true)
-
-ipcMain.on('send-message', (event, arg) => {
-  console.log(arg)
-  event.reply('take-reply', 'take')
-})
 
 // False to disable DEBUG. Cleaner terminal output.
 // ioHook.start(false);
@@ -119,7 +119,11 @@ const createWindow = () => {
         // To hide the app in the dock for windows and linux
         window.setSkipTaskbar(true)
     }
-}
+
+    // This might not be needed because the same is handled above
+    window.webContents.on('did-finish-load', () => {
+      window.webContents.send('clickEvent', clicks)
+    })}
 
 const toggleWindow = () => {
     if (window.isVisible()) {
