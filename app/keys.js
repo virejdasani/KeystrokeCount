@@ -1,0 +1,109 @@
+var keys = [{
+    letter: "a",
+    numClicked: 0
+}, {
+    letter: "b",
+    numClicked: 0
+}, {
+    letter: "c",
+    numClicked: 0
+}, {
+    letter: "d",
+    numClicked: 0
+}, {
+    letter: "e",
+    numClicked: 0
+}, {
+    letter: "f",
+    numClicked: 0
+}, {
+    letter: "g",
+    numClicked: 0
+}, {
+    letter: "h",
+    numClicked: 0
+}, {
+    letter: "i",
+    numClicked: 0
+}, {
+    letter: "j",
+    numClicked: 0
+}, {
+    letter: "k",
+    numClicked: 0
+}, {
+    letter: "l",
+    numClicked: 0
+}, {
+    letter: "m",
+    numClicked: 0
+}, {
+    letter: "n",
+    numClicked: 0
+}, {
+    letter: "o",
+    numClicked: 0
+}, {
+    letter: "p",
+    numClicked: 0
+}, {
+    letter: "q",
+    numClicked: 0
+}, {
+    letter: "r",
+    numClicked: 0
+}, {
+    letter: "s",
+    numClicked: 0
+}, {
+    letter: "t",
+    numClicked: 0
+}, {
+    letter: "u",
+    numClicked: 0
+}, {
+    letter: "v",
+    numClicked: 0
+}, {
+    letter: "w",
+    numClicked: 0
+}, {
+    letter: "x",
+    numClicked: 0
+}, {
+    letter: "y",
+    numClicked: 0
+}, {
+    letter: "z",
+    numClicked: 0
+}, {
+    letter: "Meta",
+    numClicked: 0
+}, {
+    letter: "Alt",
+    numClicked: 0
+}, {
+    letter: "Control",
+    numClicked: 0
+}, {
+    letter: "Backspace",
+    numClicked: 0
+}, {
+    letter: "Tab",
+    numClicked: 0
+}, {
+    letter: "Shift",
+    numClicked: 0
+}, {
+    letter: "Enter",
+    numClicked: 0
+}, {
+    letter: "Escape",
+    numClicked: 0
+}, {
+    letter: "CapsLock",
+    numClicked: 0
+}, { // This is for the space key
+    letter: " ",
+    numClicked: 0
+}]

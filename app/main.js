@@ -1,9 +1,14 @@
+// https://wilix-team.github.io/iohook/usage.html#generic-node-application
+
+'use strict';
+
 const {
     app,
     BrowserWindow,
     Tray,
     globalShortcut,
-    Menu
+    Menu,
+    ipcMain,
 } = require('electron')
 
 // This is the npm package `open`, it is used here to open all links in an external browser
@@ -11,13 +16,34 @@ const open = require('open')
 
 const path = require('path')
 
+const ioHook = require('iohook');
+
 const assetsDirectory = path.join(__dirname, 'assets')
 
 let tray = undefined
 let window = undefined
 
+// For ioHook
+ioHook.on('mousemove', (event) => {
+  // console.log(event)
+});
+
+// Register and start hook
+ioHook.start()
+
+// Alternatively, pass true to start in DEBUG mode.
+ioHook.start(true)
+
+ipcMain.on('send-message', (event, arg) => {
+  console.log(arg)
+  event.reply('take-reply', 'take')
+})
+
+// False to disable DEBUG. Cleaner terminal output.
+// ioHook.start(false);
+
 // Hide the menu and dev tools
-Menu.setApplicationMenu(null)
+// Menu.setApplicationMenu(null)
 
 app.on('ready', () => {
     createTray()
@@ -30,7 +56,7 @@ app.on('window-all-closed', () => {
 })
 
 const createTray = () => {
-    tray = new Tray(path.join(assetsDirectory, 'geniemojiLamp@2x.png'))
+    tray = new Tray(path.join(assetsDirectory, 'geniemojiLampTemplate@2x.png'))
     tray.on('right-click', toggleWindow)
     tray.on('double-click', toggleWindow)
     tray.on('click', function (event) {
@@ -40,30 +66,30 @@ const createTray = () => {
 
 const createWindow = () => {
     window = new BrowserWindow({
-        width: 350,
-        height: 240,
+        width: 850,
+        height: 640,
         show: false,
         frame: false,
         fullscreenable: false,
         resizable: false,
         alwaysOnTop: true,
         webPreferences: {
-            backgroundThrottling: false,
-            nodeIntegration: true
+            nodeIntegration: true,
+            contextIsolation: false,
+            enableRemoteModule: true,
         }
     })
 
-    // This is so that Geniemoji shows up on all desktops/workspaces
+    // This is so that app shows up on all desktops/workspaces
     window.setVisibleOnAllWorkspaces(true)
 
     // Load index.html
-    window.loadURL(`file://${path.join(__dirname, 'public/index.html')}`)
+    window.loadURL(`file://${path.join(__dirname, 'index.html')}`)
 
     // If 'esc' is pressed, hide the app window
     window.webContents.on('before-input-event', (event, input) => {
         if (input.key === "Escape") {
             hideWindow()
-            // event.preventDefault()
         }
     })
 
@@ -78,8 +104,8 @@ const createWindow = () => {
         hideWindow()
     })
 
-    // This is a global shortcut to activate Geniemoji with hotkey(s)
-    globalShortcut.register('Control+e', () => {
+    // This is a global shortcut to activate app with hotkey(s)
+    globalShortcut.register('Control+l', () => {
         if (window.isVisible()) {
             hideWindow()
         } else {
@@ -111,13 +137,13 @@ const hideWindow = () => {
     // This is required because app.hide() is not defined in windows and linux
     if (process.platform == 'darwin') {
         // This is so that when reopening the window, the previous state is not remembered
-        window.reload()
+        // window.reload()
         // Both of these are needed because they help restore focus back to the previous window
         app.hide()
         window.hide()
     } else {
         // This is so that when reopening the window, the previous state is not remembered
-        window.reload()
+        // window.reload()
         // Both of these are needed because they help restore focus back to the previous window
         window.minimize()
         window.hide()

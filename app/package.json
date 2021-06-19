@@ -1,20 +1,37 @@
 {
-  "name": "keystrokecount",
-  "version": "1.0.0",
-  "description": "Count your key strokes",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "keystroke-count",
-    "count",
-    "key",
-    "keyboard-count"
-  ],
-  "author": "Virej Dasani",
-  "license": "MIT",
-  "dependencies": {
-    "electron": "^13.1.2"
-  }
+    "name": "keystrokecount",
+    "version": "1.0.0",
+    "description": "Count your key strokes",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "keywords": [
+        "keystroke-count",
+        "count",
+        "key",
+        "keyboard-count"
+    ],
+    "author": "Virej Dasani",
+    "license": "MIT",
+    "dependencies": {
+        "electron": "^11.0.7",
+        "iohook": "^0.9.3",
+        "open": "^8.2.0"
+    },
+    "iohook": {
+        "targets": [
+            "node-72",
+            "electron-85"
+        ],
+        "platforms": [
+            "win32",
+            "darwin",
+            "linux"
+        ],
+        "arches": [
+            "x64",
+            "ia32"
+        ]
+    }
 }
