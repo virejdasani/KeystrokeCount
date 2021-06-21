@@ -1,6 +1,6 @@
 // https://wilix-team.github.io/iohook/usage.html#generic-node-application
 
-'use strict';
+'use strict'
 
 const {
     app,
@@ -16,22 +16,34 @@ const open = require('open')
 
 const path = require('path')
 
-const ioHook = require('iohook');
+const ioHook = require('iohook')
 
 const assetsDirectory = path.join(__dirname, 'assets')
 
 let tray = undefined
 let window = undefined
 
-var clicks = 0
+var leftClicks = 0
+var rightClicks = 0
 
-// For mouse click
+// When a mouse button is clicked
 ioHook.on('mouseclick', (event) => {
-  console.log(event)
-  clicks += 1
-  // This sends the clicks to index.js where this num of clicks are logged
-  window.webContents.send('clickEvent', clicks)
-});
+
+    console.log(event['button'])
+    // Check if it is a left-click or a right-click
+    if (event['button'] === 1) {
+        leftClicks += 1
+
+        // This sends the clicks to index.js where this num of clicks are logged
+        window.webContents.send('leftClickEvent', leftClicks)
+    } else if (event['button'] === 2) {
+        rightClicks += 1
+
+        // This sends the clicks to index.js where this num of clicks are logged
+        window.webContents.send('rightClickEvent', rightClicks)
+    }
+
+})
 
 // Register and start hook
 ioHook.start()
@@ -40,7 +52,7 @@ ioHook.start()
 ioHook.start(true)
 
 // False to disable DEBUG. Cleaner terminal output.
-// ioHook.start(false);
+// ioHook.start(false)
 
 // Hide the menu and dev tools
 // Menu.setApplicationMenu(null)
@@ -122,8 +134,9 @@ const createWindow = () => {
 
     // This might not be needed because the same is handled above
     window.webContents.on('did-finish-load', () => {
-      window.webContents.send('clickEvent', clicks)
-    })}
+        window.webContents.send('clickEvent', clicks)
+    })
+}
 
 const toggleWindow = () => {
     if (window.isVisible()) {

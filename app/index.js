@@ -1,19 +1,28 @@
-const { ipcRenderer } = require("electron")
+const {
+    ipcRenderer
+} = require("electron")
 
-ipcRenderer.on('clickEvent', (event, message) => {
-  console.log(message)
+const leftClick = document.getElementById("leftClick")
+const rightClick = document.getElementById("rightClick")
+
+ipcRenderer.on('leftClickEvent', (event, message) => {
+    leftClick.innerHTML = "Number of left clicks: " + message
+})
+
+ipcRenderer.on('rightClickEvent', (event, message) => {
+    rightClick.innerHTML = "Number of right clicks: " + message
 })
 
 // TODO - add functionality for numbers and symbols
 let total = 0
 
-const el = document.querySelector("#count")
 
 window.addEventListener("keydown", (e) => {
-  ipcRenderer.send("button-pressed");
-  
+    // Everytime any button is pressed, broadcast "key-pressed"
+    ipcRenderer.send("key-pressed")
+
     total++
-    el.innerHTML += e.key
+    // el.innerHTML += e.key
 
     // This iterates over all keys in the keys.js, keys array and if it finds a matching letter/key, it adds 1 to the numClicked for that key object
     for (let i = 0; i < keys.length; i++) {
