@@ -133,7 +133,7 @@ const hideWindow = () => {
 
 
 
-// iHook
+// ioHook
 
 var leftClicks = 0
 var rightClicks = 0
@@ -153,6 +153,11 @@ ioHook.on('mouseclick', (event) => {
         // This sends the clicks to index.js where this num of clicks are handled
         window.webContents.send('rightClickEvent', rightClicks)
     }
+})
+
+// When a mouse button is clicked
+ioHook.on('keydown', (event) => {
+    console.log(event)
 })
 
 // Register and start hook

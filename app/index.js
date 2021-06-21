@@ -13,9 +13,11 @@ ipcRenderer.on('rightClickEvent', (event, message) => {
     rightClick.innerHTML = "Number of right clicks: " + message
 })
 
+
+
+
 // TODO - add functionality for numbers and symbols
 let total = 0
-
 
 window.addEventListener("keydown", (e) => {
     // Everytime any button is pressed, broadcast "key-pressed"
