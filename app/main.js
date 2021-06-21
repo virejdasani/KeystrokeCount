@@ -23,37 +23,6 @@ const assetsDirectory = path.join(__dirname, 'assets')
 let tray = undefined
 let window = undefined
 
-var leftClicks = 0
-var rightClicks = 0
-
-// When a mouse button is clicked
-ioHook.on('mouseclick', (event) => {
-
-    console.log(event['button'])
-    // Check if it is a left-click or a right-click
-    if (event['button'] === 1) {
-        leftClicks += 1
-
-        // This sends the clicks to index.js where this num of clicks are logged
-        window.webContents.send('leftClickEvent', leftClicks)
-    } else if (event['button'] === 2) {
-        rightClicks += 1
-
-        // This sends the clicks to index.js where this num of clicks are logged
-        window.webContents.send('rightClickEvent', rightClicks)
-    }
-
-})
-
-// Register and start hook
-ioHook.start()
-
-// Alternatively, pass true to start in DEBUG mode.
-ioHook.start(true)
-
-// False to disable DEBUG. Cleaner terminal output.
-// ioHook.start(false)
-
 // Hide the menu and dev tools
 // Menu.setApplicationMenu(null)
 
@@ -131,11 +100,6 @@ const createWindow = () => {
         // To hide the app in the dock for windows and linux
         window.setSkipTaskbar(true)
     }
-
-    // This might not be needed because the same is handled above
-    window.webContents.on('did-finish-load', () => {
-        window.webContents.send('clickEvent', clicks)
-    })
 }
 
 const toggleWindow = () => {
@@ -166,3 +130,36 @@ const hideWindow = () => {
         window.hide()
     }
 }
+
+
+
+// iHook
+
+var leftClicks = 0
+var rightClicks = 0
+
+// When a mouse button is clicked
+ioHook.on('mouseclick', (event) => {
+    // Check if it is a left-click
+    if (event['button'] === 1) {
+        leftClicks += 1
+        // This sends the clicks to index.js where this num of clicks are handled
+        window.webContents.send('leftClickEvent', leftClicks)
+    }
+
+    // Check if it is a right-click
+    else if (event['button'] === 2) {
+        rightClicks += 1
+        // This sends the clicks to index.js where this num of clicks are handled
+        window.webContents.send('rightClickEvent', rightClicks)
+    }
+})
+
+// Register and start hook
+ioHook.start()
+
+// Alternatively, pass true to start in DEBUG mode.
+ioHook.start(true)
+
+// False to disable DEBUG. Cleaner terminal output.
+// ioHook.start(false)
