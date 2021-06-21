@@ -137,6 +137,7 @@ const hideWindow = () => {
 
 var leftClicks = 0
 var rightClicks = 0
+var keysPressed = []
 
 // When a mouse button is clicked
 ioHook.on('mouseclick', (event) => {
@@ -155,9 +156,12 @@ ioHook.on('mouseclick', (event) => {
     }
 })
 
-// When a mouse button is clicked
+// When a keyboard button is pressed
 ioHook.on('keydown', (event) => {
-    console.log(event)
+    // Append the keycode for the key pressed to the keysPressed array
+    keysPressed.push(event['keycode'])
+    // Send the message with the new array to the renderer process
+    window.webContents.send('keydownEvent', keysPressed)
 })
 
 // Register and start hook
