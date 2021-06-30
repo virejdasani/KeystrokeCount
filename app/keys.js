@@ -1,5 +1,6 @@
 // https://gist.github.com/rickyzhang82/8581a762c9f9fc6ddb8390872552c250
 // https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h
+// To get any other key, console.log(event) inside the ioHook.on("keydown")
 const keys = [
   {
     keyCode: 0,
@@ -507,6 +508,12 @@ const keys = [
     keyName: "RightAlt",
     timesClicked: 0,
   },
+  // This is the same code as above because MacOS and Windows have some difference
+  {
+    keyCode: 3640,
+    keyName: "RightAlt",
+    timesClicked: 0,
+  },
   {
     keyCode: 101,
     keyName: "LineFeed",
@@ -522,6 +529,12 @@ const keys = [
     keyName: "UpArrow",
     timesClicked: 0,
   },
+  // Same keyName different keyCode is because of the difference between MacOS and Windows
+  {
+    keyCode: 57416,
+    keyName: "UpArrow",
+    timesClicked: 0,
+  },
   {
     keyCode: 104,
     keyName: "PageUp",
@@ -533,7 +546,17 @@ const keys = [
     timesClicked: 0,
   },
   {
+    keyCode: 57419,
+    keyName: "LeftArrow",
+    timesClicked: 0,
+  },
+  {
     keyCode: 106,
+    keyName: "RightArrow",
+    timesClicked: 0,
+  },
+  {
+    keyCode: 57421,
     keyName: "RightArrow",
     timesClicked: 0,
   },
@@ -544,6 +567,11 @@ const keys = [
   },
   {
     keyCode: 108,
+    keyName: "DownArrow",
+    timesClicked: 0,
+  },
+  {
+    keyCode: 57424,
     keyName: "DownArrow",
     timesClicked: 0,
   },
@@ -580,6 +608,16 @@ const keys = [
   {
     keyCode: 115,
     keyName: "VolumeUp",
+    timesClicked: 0,
+  },
+  {
+    keyCode: 3675,
+    keyName: "MetaLeft",
+    timesClicked: 0,
+  },
+  {
+    keyCode: 3676,
+    keyName: "MetaRight",
     timesClicked: 0,
   },
 ];
