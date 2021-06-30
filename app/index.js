@@ -21,7 +21,12 @@ ipcRenderer.on("keydownEvent", (event, keyCodesPressed) => {
   // keyCodesPressed is an array of keyCodes of all the keys pressed. keyCodesPressed[0] gives us the last key pressed
   // keys is the array in keys.js
   var key = keys.find((key) => key.keyCode === keyCodesPressed[0]);
-  console.log(key.keyName);
+  var keyName = key.keyName;
+  console.log(keyName); // This logs the keyName pressed
+  keysPressed.push(keyName);
+  console.log(keysPressed);
+
+  keydown.innerHTML = "";
 });
 
 // For mouse clicks
