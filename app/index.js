@@ -26,7 +26,16 @@ ipcRenderer.on("keydownEvent", (event, keyCodesPressed) => {
   keysPressed.push(keyName);
   console.log(keysPressed);
 
-  keydown.innerHTML = "";
+  // This counts how many times keys are pressed
+  for (var i in keys) {
+    // If the keyCode in the keys array matches the last pressed key
+    if (keys[i].keyCode == keyCodesPressed[0]) {
+      // For that key, the timesClicked is incremented by 1
+      keys[i].timesClicked += 1;
+      console.log(keys[i]);
+      break;
+    }
+  }
 });
 
 // For mouse clicks
