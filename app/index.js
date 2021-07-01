@@ -4,23 +4,30 @@ const leftClick = document.getElementById("leftClick");
 const rightClick = document.getElementById("rightClick");
 const keydown = document.getElementById("keydown");
 
-// TODO - when message is received from main process, set message to local storage
+// Get the localKeys from localStorage
+var localKeys = localStorage.getItem("localKeys");
+
+// If localKeys doesn't exist in localStorage, we initialize it to the keys array from keys.js
+if (localKeys === null) {
+  localStorage.setItem("localKeys", keys);
+}
 
 // When a key press is detected in the main process this happens
 ipcRenderer.on("keydownEvent", (event, keyCodesPressed) => {
-  // We find which key is pressed by comparing the keyCode we get from the main process to the keyNames in keys.js
-  // keyCodesPressed is an array of keyCodes of all the keys pressed. keyCodesPressed[0] gives us the last key pressed
-  // keys is the array in keys.js
-  var key = keys.find((key) => key.keyCode === keyCodesPressed[0]);
+  // Set localKeys to "localKeys" from localStorage
+  localKeys = localStorage.getItem("localKeys");
 
-  // This counts how many times keys are pressed
+  // We loop over all the objects in the keys array (from keys.js)
   for (var i in keys) {
     // If the keyCode in the keys array matches the last pressed key
     if (keys[i].keyCode == keyCodesPressed[0]) {
-      // For that key, the timesClicked is incremented by 1
+      // For that key, the timesClicked in that object is incremented by 1
       keys[i].timesClicked += 1;
-      console.log(keys[i]);
-      keydown.innerHTML = keys[i].keyName + " " + keys[i].timesClicked;
+      // Now update the keys array in localStorage to reflect the +1 in timesClicked
+      localStorage.setItem("localKeys", JSON.stringify(keys));
+      // This gets the keys array from localStorage and logs
+      console.log(JSON.parse(localStorage.getItem("localKeys")));
+      // Break out of the loop
       break;
     }
   }
