@@ -2,6 +2,7 @@
 // https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h
 // To get any other key, console.log(event) inside the ioHook.on("keydown")
 const keys = [
+  // keyName "Reserved" seems to be: '§'
   {
     keyCode: 0,
     keyName: "Reserved",
@@ -422,10 +423,10 @@ const keys = [
     keyName: ". KP",
     timesClicked: 0,
   },
-  // For some reason, this doesn't exists
+  // For some reason keyCode 84, this doesn't exists
   // {
   //   keyCode: 84,
-  //   keyName: "G",
+  //   keyName: "",
   //   timesClicked: 0,
   // },
   {
@@ -618,6 +619,18 @@ const keys = [
   {
     keyCode: 3676,
     keyName: "MetaRight",
+    timesClicked: 0,
+  },
+  // The keyCode for leftClick is randomly chosen by me
+  {
+    keyCode: 134761167,
+    keyName: "leftClick",
+    timesClicked: 0,
+  },
+  // The keyCode for rightClick is randomly chosen by me
+  {
+    keyCode: 4164761167,
+    keyName: "rightClick",
     timesClicked: 0,
   },
 ];
