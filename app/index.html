@@ -11,10 +11,23 @@
 </head>
 
 <body>
-  <h1>Keystroke Count</h1>
-  <h2 id="leftClick"></h2>
-  <h2 id="rightClick"></h2>
-  <h2 id="keydown"></h2>
+  <h1 id="headTitle">Keystroke Count</h1>
+  <hr class="titleSeparator">
+  <div id="topData">
+    <h2 class="Jost" id="totalKeys">Total Keys Pressed Today: 1,090,383</h2>
+    <h2 class="Jost" id="totalClicks">Total Mouse Clicks Today: 109,230,980</h2>
+  </div>
+  <hr class="separator">
+  <div id="bottomData">
+    <h2 class="Jost" id="mostUsedKey">Your most used key today was ‘E’.</h2>
+    <h2 class="Jost" id="totalClicks">You pressed it 6,174 times</h2>
+  </div>
+  <button class="Jost" id="moreButton">More</button>
+
+
+  <h2 class="Jost" id="keydown"></h2>
+
+
 
   <script src="index.js"></script>
   <script src="keys.js"></script>

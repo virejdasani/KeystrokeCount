@@ -1,8 +1,81 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins/Poppins-Light.ttf");
+}
+
+@font-face {
+  font-family: "Jost";
+  src: url("./assets/fonts/Jost/Jost-Regular.ttf");
+}
+
 html,
 body {
   color: #fff;
   background-color: rgb(45, 45, 45);
   font-family: Arial, Helvetica, sans-serif;
-  width: 100%;
-  height: 100%;
+  text-align: center;
+}
+
+#headTitle {
+  font-family: "Poppins";
+  text-align: center;
+  color: #FFF2E9;
+  font-size: 54px;
+  margin-bottom: 0;
+}
+
+#topData {
+  font-size: 20px;
+  margin-top: 62px;
+}
+
+#bottomData {
+  font-size: 18px;
+  margin-top: 40px;
+}
+
+#moreButton {
+  margin-top: 30px;
+  background: rgba(190, 190, 190, 0.19);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+  width: 145px;
+  height: 55px;
+  border: none;
+  font-size: 35px;
+  line-height: 51px;
+  color: #c2c2c2;
+  outline: none;
+}
+
+#moreButton:hover {
+  transition: 0.1s ease-in-out;
+  color: #d6d6d6;
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
+  background: rgba(190, 190, 190, 0.26);
+}
+
+#moreButton:active {
+  transition: 0.1s ease-in-out;
+  color: #c7c7c7;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+  background: rgba(190, 190, 190, 0.22);
+}
+
+.separator {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  height: 1px;
+  width: 80%;
+}
+
+.titleSeparator {
+  background-color: rgba(255, 255, 255, 0.75);
+  border: none;
+  height: 1px;
+  width: 500px;
+}
+
+.Jost {
+  font-family: "Jost";
 }
