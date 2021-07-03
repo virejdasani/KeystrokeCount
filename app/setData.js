@@ -20,7 +20,7 @@ function setTotalKeysClicked() {
 
   // Now show the totalKeysNum in the totalKeys h2 element
   totalKeys.innerHTML = `
-    Total Keys Pressed Today: ${totalKeysNum}
+    Total Keys Pressed Today: ${totalKeysNum.toLocaleString()}
   `;
 }
 
@@ -41,7 +41,7 @@ function setTotalMouseClicks() {
 
   // Now show the totalClickedNum in the totalKeys h2 element
   totalClicks.innerHTML = `
-    Total Mouse Clicks Today: ${totalClicksNum}
+    Total Mouse Clicks Today: ${totalClicksNum.toLocaleString()}
   `;
 }
 
@@ -65,7 +65,7 @@ function setMostUsedKey() {
     Your most used key today was ‘${mostUsedKeyName}’.
   `;
   mostClicks.innerHTML = `
-    You pressed it ${mostUsedKeyPresses} times
+    You pressed it ${mostUsedKeyPresses.toLocaleString()} times
   `;
 }
 
