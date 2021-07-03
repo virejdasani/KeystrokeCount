@@ -1,5 +1,7 @@
 var totalKeys = document.getElementById("totalKeys");
 var totalClicks = document.getElementById("totalClicks");
+var mostUsedKey = document.getElementById("mostUsedKey");
+var mostClicks = document.getElementById("mostClicks");
 
 // This counts the number of keys pressed by looping over the timesClicked in the keys array
 function setTotalKeysClicked() {
@@ -43,8 +45,48 @@ function setTotalMouseClicks() {
   `;
 }
 
+// This loops over the localKeys and returns the key that has the largest timesClicked
+function setMostUsedKey() {
+  let keysArr = JSON.parse(localStorage.getItem("localKeys"));
+
+  // This removes the leftClick and rightClick keys from keysArr
+  keysArr = removeByAttr(keysArr, "keyCode", 134761167);
+  keysArr = removeByAttr(keysArr, "keyCode", 4164761167);
+
+  // This sorts keysArr in descending order of timeClicked and sets it to sortedArr
+  let sortedArr = keysArr.sort((a, b) => b.timesClicked - a.timesClicked);
+
+  // This gets the first item from sortedArr i.e. key with most presses and sets the keyName to mostUsedKey
+  let mostUsedKeyName = sortedArr[0].keyName;
+  // This gets the first item from sortedArr i.e. key with most presses and sets the timesClicked to mostUsedKeyPresses
+  let mostUsedKeyPresses = sortedArr[0].timesClicked;
+
+  mostUsedKey.innerHTML = `
+    Your most used key today was ‘${mostUsedKeyName}’.
+  `;
+  mostClicks.innerHTML = `
+    You pressed it ${mostUsedKeyPresses} times
+  `;
+}
+
+var removeByAttr = function (arr, attr, value) {
+  var i = arr.length;
+  while (i--) {
+    if (
+      arr[i] &&
+      arr[i].hasOwnProperty(attr) &&
+      arguments.length > 2 &&
+      arr[i][attr] === value
+    ) {
+      arr.splice(i, 1);
+    }
+  }
+  return arr;
+};
+
 // This is run on page startup or refresh
 function onStartup() {
   setTotalKeysClicked();
   setTotalMouseClicks();
+  setMostUsedKey();
 }

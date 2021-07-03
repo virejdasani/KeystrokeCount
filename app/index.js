@@ -27,6 +27,7 @@ ipcRenderer.on("keydownEvent", (event, keyCodesPressed) => {
       localStorage.setItem("localKeys", JSON.stringify(localKeys));
       // This shows the total number of keys pressed today (from setData.js)
       setTotalKeysClicked();
+      setMostUsedKey();
       // Break out of the loop
       break;
     }

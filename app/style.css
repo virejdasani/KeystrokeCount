@@ -8,12 +8,18 @@
   src: url("./assets/fonts/Jost/Jost-Regular.ttf");
 }
 
+@font-face {
+  font-family: "JostThin";
+  src: url("./assets/fonts/Jost/Jost-Light.ttf");
+}
+
 html,
 body {
   color: #fff;
   background-color: #232e32;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
+  user-select: none;
 }
 
 #headTitle {
@@ -62,6 +68,16 @@ body {
   background: rgba(190, 190, 190, 0.22);
 }
 
+#credits {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 15px;
+  font-family: "JostThin";
+}
+
 .separator {
   background-color: rgba(255, 255, 255, 0.4);
   border: none;
@@ -78,4 +94,16 @@ body {
 
 .Jost {
   font-family: "Jost";
+}
+
+a:link {
+  color: rgb(0, 187, 255);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: rgb(0, 187, 255);
+  background-color: transparent;
+  text-decoration: underline;
 }
