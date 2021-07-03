@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body onload="onStartup()">
   <h1 id="headTitle">Keystroke Count</h1>
   <hr class="titleSeparator">
   <div id="topData">
@@ -22,15 +22,13 @@
     <h2 class="Jost" id="mostUsedKey">Your most used key today was ‘E’.</h2>
     <h2 class="Jost" id="totalClicks">You pressed it 6,174 times</h2>
   </div>
+  <hr class="separator">
   <button class="Jost" id="moreButton">More</button>
 
-
-  <h2 class="Jost" id="keydown"></h2>
-
-
-
-  <script src="index.js"></script>
   <script src="keys.js"></script>
+  <script src="index.js"></script>
+  <script src="setData.js"></script>
+
 </body>
 
 </html>

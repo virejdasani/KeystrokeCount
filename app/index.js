@@ -1,21 +1,14 @@
 const { ipcRenderer } = require("electron");
 
-const leftClick = document.getElementById("leftClick");
-const rightClick = document.getElementById("rightClick");
-const keydown = document.getElementById("keydown");
-
 // Get the localKeys from localStorage
 // localKeys is the keys array from keys.js
 var localKeys = localStorage.getItem("localKeys");
 
 // If localKeys is not found in localStorage
 if (localKeys === null) {
-  // Wait for index.html to load up because we need the keys array from keys.js, which is linked in index.html
-  window.addEventListener("load", function () {
-    // Set the keys array to localStorage by id of "localKeys"
-    localStorage.setItem("localKeys", JSON.stringify(keys));
-    console.log("Set keys array to localStorage");
-  });
+  // Set the keys array to localStorage by id of "localKeys"
+  localStorage.setItem("localKeys", JSON.stringify(keys));
+  console.log("Set keys array to localStorage");
 }
 
 // When a key press is detected in the main process this happens
@@ -32,8 +25,8 @@ ipcRenderer.on("keydownEvent", (event, keyCodesPressed) => {
       localKeys[i].timesClicked += 1;
       // Now update the localKeys array in localStorage to reflect the +1 in timesClicked
       localStorage.setItem("localKeys", JSON.stringify(localKeys));
-      // This gets the localKeys array from localStorage and logs
-      console.log(JSON.parse(localStorage.getItem("localKeys")));
+      // This shows the total number of keys pressed today (from setData.js)
+      setTotalKeysClicked();
       // Break out of the loop
       break;
     }
@@ -52,12 +45,10 @@ ipcRenderer.on("leftClickEvent", (event, leftClicks) => {
     if (localKeys[i].keyCode == 134761167) {
       // Increment the timesClicked for leftClick
       localKeys[i].timesClicked += 1;
-      // Set the innerHTML of the rightClick div to the timesClicked
-      leftClick.innerHTML =
-        "Number of left clicks: " + localKeys[i].timesClicked;
       // Update the keys array in localStorage
       localStorage.setItem("localKeys", JSON.stringify(localKeys));
-      console.log(JSON.parse(localStorage.getItem("localKeys")));
+      // This shows the total number of mouse clicks today (from setData.js)
+      setTotalMouseClicks();
       // Break out of the loop
       break;
     }
@@ -75,12 +66,10 @@ ipcRenderer.on("rightClickEvent", (event, rightClicks) => {
     if (localKeys[i].keyCode == 4164761167) {
       // Increment the timesClicked for rightClick
       localKeys[i].timesClicked += 1;
-      // Set the innerHTML of the rightClick div to the timesClicked
-      rightClick.innerHTML =
-        "Number of right clicks: " + localKeys[i].timesClicked;
       // Update the keys array in localStorage
       localStorage.setItem("localKeys", JSON.stringify(localKeys));
-      console.log(JSON.parse(localStorage.getItem("localKeys")));
+      // This shows the total number of mouse clicks today (from setData.js)
+      setTotalMouseClicks();
       // Break out of the loop
       break;
     }

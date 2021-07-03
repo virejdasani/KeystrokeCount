@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Poppins";
-  src: url("./assets/fonts/Poppins/Poppins-Light.ttf");
+  src: url("./assets/fonts/Poppins/Poppins-Regular.ttf");
 }
 
 @font-face {
@@ -11,7 +11,7 @@
 html,
 body {
   color: #fff;
-  background-color: rgb(45, 45, 45);
+  background-color: #232e32;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
 }
