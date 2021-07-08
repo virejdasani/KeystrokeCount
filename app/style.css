@@ -20,24 +20,25 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   user-select: none;
+  overflow: hidden;
 }
 
 #headTitle {
   font-family: "Poppins";
   text-align: center;
   color: #FFF2E9;
-  font-size: 54px;
+  font-size: 44px;
   margin-bottom: 0;
   margin-top: 20px;
 }
 
 #topData {
-  font-size: 20px;
-  margin-top: 62px;
+  font-size: 16px;
+  margin-top: 42px;
 }
 
 #bottomData {
-  font-size: 18px;
+  font-size: 16px;
   margin-top: 40px;
 }
 
@@ -73,8 +74,8 @@ body {
   margin: 0;
   padding: 0;
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: 4px;
+  left: 6px;
   font-size: 15px;
   font-family: "JostThin";
 }
@@ -100,19 +101,6 @@ body {
   font-family: "Jost";
 }
 
-/* a:link {
-  color: rgb(0, 187, 255);
-  background-color: transparent;
-  text-decoration: underline;
-}
-
-a:visited {
-  color: rgb(0, 187, 255);
-  background-color: transparent;
-  text-decoration: underline;
-} */
-
-
 ::-webkit-scrollbar {
   background-color: #181e21;
   width: 12px !important;
@@ -123,4 +111,16 @@ a:visited {
   border-radius: 12px;
   background-clip: content-box;
   min-height: 26px;
+}
+
+a:link {
+  color: rgb(0, 187, 255);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: rgb(0, 187, 255);
+  background-color: transparent;
+  text-decoration: underline;
 }

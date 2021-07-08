@@ -47,8 +47,8 @@ const createTray = () => {
 
 const createWindow = () => {
   window = new BrowserWindow({
-    width: 850,
-    height: 640,
+    width: 900,
+    height: 780,
     show: false,
     frame: false,
     fullscreenable: false,
