@@ -77,6 +77,12 @@ function onStartup() {
   setHeatmap();
 }
 
+function reloadKeys() {
+  setTotalKeysClicked();
+  setMostUsedKey();
+  setHeatmap();
+}
+
 var removeByAttr = function (arr, attr, value) {
   var i = arr.length;
   while (i--) {

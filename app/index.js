@@ -13,6 +13,7 @@ if (localKeys === null) {
 
 // When a key press is detected in the main process this happens
 ipcRenderer.on("keydownEvent", (event, keyCodesPressed) => {
+  console.log(keyCodesPressed);
   // Set localKeys to "localKeys" from localStorage
   localKeys = JSON.parse(localStorage.getItem("localKeys"));
   // If localKeys doesn't exist in localStorage, we initialize it to the keys array from keys.js
@@ -25,10 +26,8 @@ ipcRenderer.on("keydownEvent", (event, keyCodesPressed) => {
       localKeys[i].timesClicked += 1;
       // Now update the localKeys array in localStorage to reflect the +1 in timesClicked
       localStorage.setItem("localKeys", JSON.stringify(localKeys));
-      // This shows the total number of keys pressed today (from setData.js)
-      setTotalKeysClicked();
-      setMostUsedKey();
-      setHeatmap();
+      // This updates all the keys from setData.js and heatmap.js
+      reloadKeys();
       // Break out of the loop
       break;
     }

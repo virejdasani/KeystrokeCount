@@ -1,1 +1,2 @@
-Add a keyboard heatmap to show most used keys
+For some reason, capslock crashes the app
+Give more stats when haver or clicking a key like times clicked

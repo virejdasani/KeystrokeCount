@@ -5,7 +5,7 @@ const keys = [
   // keyName "Reserved" seems to be: '§'
   {
     keyCode: 0,
-    keyName: "Reserved",
+    keyName: "fn",
     timesClicked: 0,
   },
   {
