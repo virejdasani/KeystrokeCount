@@ -28,6 +28,7 @@ body {
   color: #FFF2E9;
   font-size: 54px;
   margin-bottom: 0;
+  margin-top: 20px;
 }
 
 #topData {
@@ -82,21 +83,24 @@ body {
   background-color: rgba(255, 255, 255, 0.4);
   border: none;
   height: 1px;
-  width: 80%;
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 10px;
 }
 
 .titleSeparator {
   background-color: rgba(255, 255, 255, 0.75);
   border: none;
   height: 1px;
-  width: 500px;
+  width: 56%;
+  margin-left: 22%;
 }
 
 .Jost {
   font-family: "Jost";
 }
 
-a:link {
+/* a:link {
   color: rgb(0, 187, 255);
   background-color: transparent;
   text-decoration: underline;
@@ -106,4 +110,17 @@ a:visited {
   color: rgb(0, 187, 255);
   background-color: transparent;
   text-decoration: underline;
+} */
+
+
+::-webkit-scrollbar {
+  background-color: #181e21;
+  width: 10px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(44, 56, 65);
+  border-radius: 12px;
+  background-clip: content-box;
+  min-height: 26px;
 }

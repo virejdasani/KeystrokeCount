@@ -8,6 +8,7 @@
   <title>Keystroke Count</title>
 
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="keyboard.css">
 </head>
 
 <body onload="onStartup()">
@@ -23,13 +24,112 @@
     <h2 class="Jost" id="mostClicks">You pressed it 6,174 times</h2>
   </div>
   <hr class="separator">
-  <button class="Jost" id="moreButton">More</button>
 
-  <h4 id="credits">Developed by <a target="_blank" href="https://virejdasani.github.io/">Virej Dasani</a></h4>
+  <div id="keyboard">
+    <ul>
+      <li><a class="key c27 fn" id="Esc"><span>Esc</span></a></li>
+      <li><a class="key c112 fn" id="F1"><span>F1</span></a></li>
+      <li><a class="key c113 fn" id="F2"><span>F2</span></a></li>
+      <li><a class="key c114 fn" id="F3"><span>F3</span></a></li>
+      <li><a class="key c115 fn" id="F4"><span>F4</span></a></li>
+      <li><a class="key c116 fn" id="F5"><span>F5</span></a></li>
+      <li><a class="key c117 fn" id="F6"><span>F6</span></a></li>
+      <li><a class="key c118 fn" id="F7"><span>F7</span></a></li>
+      <li><a class="key c119 fn" id="F8"><span>F8</span></a></li>
+      <li><a class="key c120 fn" id="F9"><span>F9</span></a></li>
+      <li><a class="key c121 fn" id="F10"><span>F10</span></a></li>
+      <li><a class="key c122 fn" id="F11"><span>F11</span></a></li>
+      <li><a class="key c123 fn" id="F12"><span>F12</span></a></li>
+      <li><a class="key fn"><span>Power</span></a></li>
+    </ul>
+    <ul id="numbers">
+      <li><a class="key c192" id="`"><b>~</b><span>`</span></a></li>
+      <li><a class="key c49" id="1"><b>!</b><span>1</span></a></li>
+      <li><a class="key c50" id="2"><b>@</b><span>2</span></a></li>
+      <li><a class="key c51" id="3"><b>#</b><span>3</span></a></li>
+      <li><a class="key c52" id="4"><b>$</b><span>4</span></a></li>
+      <li><a class="key c53" id="5"><b>%</b><span>5</span></a></li>
+      <li><a class="key c54" id="6"><b>^</b><span>6</span></a></li>
+      <li><a class="key c55" id="7"><b>&amp;</b><span>7</span></a></li>
+      <li><a class="key c56" id="8"><b>*</b><span>8</span></a></li>
+      <li><a class="key c57" id="9"><b>(</b><span>9</span></a></li>
+      <li><a class="key c48" id="0"><b>)</b><span>0</span></a></li>
+      <li><a class="key c189 alt" id="-"><b>_</b><span>-</span></a></li>
+      <li><a class="key c187" id="="><b>+</b><span>=</span></a></li>
+      <li><a class="key c46" id="Backspace"><span>Backspace</span></a></li>
+    </ul>
+    <ul id="qwerty">
+      <li><a class="key c9" id="Tab"><span>tab</span></a></li>
+      <li><a class="key c81" id="Q"><span>q</span></a></li>
+      <li><a class="key c87" id="W"><span>w</span></a></li>
+      <li><a class="key c69" id="E"><span>e</span></a></li>
+      <li><a class="key c82" id="R"><span>r</span></a></li>
+      <li><a class="key c84" id="T"><span>t</span></a></li>
+      <li><a class="key c89" id="Y"><span>y</span></a></li>
+      <li><a class="key c85" id="U"><span>u</span></a></li>
+      <li><a class="key c73" id="I"><span>i</span></a></li>
+      <li><a class="key c79" id="O"><span>o</span></a></li>
+      <li><a class="key c80" id="P"><span>p</span></a></li>
+      <li><a class="key c219 alt" id="{"><b>{</b><span>[</span></a></li>
+      <li><a class="key c221 alt" id="}"><b>}</b><span>]</span></a></li>
+      <li><a class="key c220 alt" id="\"><b>|</b><span>\</span></a></li>
+    </ul>
+    <ul id="asdfg">
+      <li><a class="key c20 alt" id="CapsLock"><b></b><span>caps lock</span></a></li>
+      <li><a class="key c65" id="A"><span>a</span></a></li>
+      <li><a class="key c83" id="S"><span>s</span></a></li>
+      <li><a class="key c68" id="D"><span>d</span></a></li>
+      <li><a class="key c70" id="F"><span>f</span></a></li>
+      <li><a class="key c71" id="G"><span>g</span></a></li>
+      <li><a class="key c72" id="H"><span>h</span></a></li>
+      <li><a class="key c74" id="J"><span>j</span></a></li>
+      <li><a class="key c75" id="K"><span>k</span></a></li>
+      <li><a class="key c76" id="L"><span>l</span></a></li>
+      <li><a class="key c186 alt" id=";"><b>:</b><span>;</span></a></li>
+      <li><a class="key c222 alt" id="'"><b>"</b><span>'</span></a></li>
+      <li><a class="key c13 alt" id="Enter"><span>return</span></a></li>
+    </ul>
+    <ul id="zxcvb">
+      <li><a class="key c16 shiftleft" id="LeftShift"><span>Shift</span></a></li>
+      <li><a class="key c90" id="Z"><span>z</span></a></li>
+      <li><a class="key c88" id="X"><span>x</span></a></li>
+      <li><a class="key c67" id="C"><span>c</span></a></li>
+      <li><a class="key c86" id="V"><span>v</span></a></li>
+      <li><a class="key c66" id="B"><span>b</span></a></li>
+      <li><a class="key c78" id="N"><span>n</span></a></li>
+      <li><a class="key c77" id="M"><span>m</span></a></li>
+      <li><a class="key c188 alt" id=","><b>&lt;</b><span>,</span></a></li>
+      <li><a class="key c190 alt" id="."><b>&gt;</b><span>.</span></a></li>
+      <li><a class="key c191 alt" id="/"><b>?</b><span>/</span></a></li>
+      <li><a class="key c16 shiftright" id="RightShift"><span>Shift</span></a></li>
+    </ul>
+    <ul id="bottomrow">
+      <li><a class="key" id="fn"><span>fn</span></a></li>
+      <li><a class="key c17" id="LeftControl"><span>control</span></a></li>
+      <li><a class="key option" id="LeftAlt"><span>option</span></a></li>
+      <li><a class="key command" id="LeftCommand"><span>command</span></a></li>
+      <li><a class="key c32" id="spacebar"></a></li>
+      <li><a class="key command" id="RightCommand"><span>command</span></a></li>
+      <li><a class="key option" id="RightAlt"><span>option</span></a></li>
+      <ol>
+        <li><a class="key c37" id="LeftArrow"><span>&#x25C0;</span></a></li>
+        <li>
+          <a class="key c38" id="UpArrow"><span>&#x25B2;</span></a>
+          <a class="key c40" id="DownArrow"><span>&#x25BC;</span></a>
+        </li>
+        <li><a class="key c39" id="RightArrow"><span>&#x25B6;</span></a></li>
+      </ol>
+    </ul>
+  </div>
+  <!-- <hr class="separator"> -->
+  <!-- <button class="Jost" id="moreButton">More</button> -->
+
+  <!-- <h4 id="credits">Developed by <a target="_blank" href="https://virejdasani.github.io/">Virej Dasani</a></h4> -->
 
   <script src="keys.js"></script>
   <script src="index.js"></script>
   <script src="setData.js"></script>
+  <script src="heatmap.js"></script>
 
 </body>
 

@@ -613,12 +613,12 @@ const keys = [
   },
   {
     keyCode: 3675,
-    keyName: "MetaLeft",
+    keyName: "LeftCommand",
     timesClicked: 0,
   },
   {
     keyCode: 3676,
-    keyName: "MetaRight",
+    keyName: "RightCommand",
     timesClicked: 0,
   },
   // The keyCode for leftClick is randomly chosen by me

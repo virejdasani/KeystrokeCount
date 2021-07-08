@@ -1,0 +1,345 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#keyboard {
+  z-index: 20;
+  margin: 50px auto 40px;
+  width: 800px;
+  height: 315px;
+  background: #bbb;
+  background-image: -webkit-gradient(linear,
+      left bottom,
+      left top,
+      color-stop(0.27, rgb(212, 216, 219)),
+      color-stop(0.64, rgb(213, 217, 220)),
+      color-stop(0.95, rgb(230, 233, 235)),
+      color-stop(1, rgb(191, 191, 191)));
+  background-image: -moz-linear-gradient(center bottom,
+      rgb(212, 216, 219) 27%,
+      rgb(213, 217, 220) 64%,
+      rgb(230, 233, 235) 95%,
+      rgb(191, 191, 191) 100%);
+  -moz-border-radius-topleft: 7px 21px;
+  -moz-border-radius-topright: 7px 21px;
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-top-left-radius: 7px 21px;
+  border-top-right-radius: 7px 21px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 50px 0 0;
+}
+
+ul {
+  list-style-type: none;
+  width: 784px;
+  margin: 0 auto;
+}
+
+li {
+  float: left;
+}
+
+.key {
+  display: block;
+  color: #aaa;
+  font: bold 9pt arial;
+  text-decoration: none;
+  text-align: center;
+  width: 44px;
+  height: 41px;
+  margin: 5px;
+  background: #eff0f2;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  border-top: 1px solid #f5f5f5;
+  -webkit-box-shadow:
+    inset 0 0 25px #e8e8e8,
+    0 1px 0 #c3c3c3,
+    0 2px 0 #c9c9c9,
+    0 2px 3px #333;
+  -moz-box-shadow:
+    inset 0 0 25px #e8e8e8,
+    0 1px 0 #c3c3c3,
+    0 2px 0 #c9c9c9,
+    0 2px 3px #333;
+  box-shadow:
+    inset 0 0 25px #e8e8e8,
+    0 1px 0 #c3c3c3,
+    0 2px 0 #c9c9c9,
+    0 2px 3px #333;
+  text-shadow: 0px 1px 0px #f5f5f5;
+  filter: dropshadow(color=#f5f5f5, offx=0, offy=1);
+}
+
+.key:active,
+.keydown {
+  color: #888;
+  background: #ebeced;
+  margin: 7px 5px 3px;
+  -webkit-box-shadow:
+    inset 0 0 25px #ddd,
+    0 0 3px #333;
+  -moz-box-shadow:
+    inset 0 0 25px #ddd,
+    0 0 3px #333;
+  box-shadow:
+    inset 0 0 25px #ddd,
+    0 0 3px #333;
+  border-top: 1px solid #eee;
+}
+
+.fn span {
+  display: block;
+  margin: 14px 5px 0 0;
+  text-align: right;
+  font: bold 6pt arial;
+  text-transform: uppercase;
+}
+
+#numbers li a span {
+  display: block;
+}
+
+#numbers li a b {
+  margin: 3px 0 3px;
+  display: block;
+}
+
+#numbers li .alt b {
+  display: block;
+  margin: 0 0 3px;
+}
+
+#numbers li #Backspace span {
+  text-align: right;
+  margin: 23px 10px 0 0;
+  font-size: 7.5pt;
+  text-transform: lowercase;
+}
+
+#qwerty li a span {
+  display: block;
+  margin: 13px 0 0;
+  text-transform: uppercase;
+}
+
+#qwerty li #Tab span {
+  text-align: left;
+  margin: 23px 0 0 10px;
+  font-size: 7.5pt;
+  text-transform: lowercase;
+}
+
+#qwerty li .alt b {
+  display: block;
+  margin: 3px 0 0;
+}
+
+#qwerty li .alt span {
+  margin: 2px 0 0;
+}
+
+
+#asdfg li a span {
+  display: block;
+  margin: 13px 0 0;
+  text-transform: uppercase;
+}
+
+#asdfg li .alt span {
+  margin: 0;
+  text-transform: lowercase;
+}
+
+#asdfg li .alt b {
+  display: block;
+  margin: 3px 0 0;
+}
+
+#asdfg li #CapsLock b {
+  display: block;
+  background: #999;
+  width: 4px;
+  height: 4px;
+  border-radius: 10px;
+  margin: 9px 0 0 10px;
+  -webkit-box-shadow: inset 0 1px 0 #666;
+  -moz-box-shadow: inset 0 1px 0 #666;
+  box-shadow: inset 0 1px 0 #666;
+}
+
+#asdfg li #CapsLock span {
+  text-align: left;
+  margin: 10px 0 0 10px;
+  font-size: 7.5pt;
+}
+
+#asdfg li #Enter span {
+  text-align: right;
+  margin: 23px 10px 0 0;
+  font-size: 7.5pt;
+}
+
+
+#zxcvb li a span {
+  display: block;
+  margin: 13px 0 0;
+  text-transform: uppercase;
+}
+
+#zxcvb li .shiftleft span {
+  text-align: left;
+  margin: 23px 0 0 10px;
+  font-size: 7.5pt;
+  text-transform: lowercase;
+}
+
+#zxcvb li .shiftright span {
+  text-align: right;
+  margin: 23px 10px 0 0;
+  font-size: 7.5pt;
+  text-transform: lowercase;
+}
+
+#zxcvb li .alt b {
+  display: block;
+  margin: 4px 0 0;
+}
+
+#zxcvb li .alt span {
+  margin: 0;
+}
+
+#bottomrow li #fn span,
+#bottomrow li #LeftControl span,
+#bottomrow li #LeftAlt span,
+#bottomrow li #LeftCommand span {
+  display: block;
+  text-align: left;
+  margin: 31px 0 0 8px;
+  font-size: 7.5pt;
+  text-transform: lowercase;
+}
+
+#bottomrow li #RightAlt span,
+#bottomrow li #RightCommand span {
+  display: block;
+  text-align: right;
+  margin: 31px 8px 0 0;
+  font-size: 7.5pt;
+  text-transform: lowercase;
+}
+
+#bottomrow ol li #LeftArrow span,
+#bottomrow ol li #RightArrow span,
+#bottomrow ol li #UpArrow span,
+#bottomrow ol li #DownArrow span {
+  display: block;
+  margin: 9px 0 0;
+}
+
+.fn {
+  height: 26px;
+  width: 46px;
+}
+
+#Backspace {
+  width: 72px;
+}
+
+#Tab {
+  width: 72px;
+}
+
+#CapsLock {
+  width: 85px;
+}
+
+#Enter {
+  width: 85px;
+}
+
+.shiftleft,
+.shiftright {
+  width: 112px;
+}
+
+#fn,
+#LeftControl,
+.option,
+.command,
+#spacebar {
+  height: 49px;
+}
+
+#LeftControl {
+  width: 56px;
+}
+
+.option {
+  width: 46px;
+}
+
+.command {
+  width: 67px;
+}
+
+#spacebar {
+  width: 226px;
+}
+
+#LeftArrow img,
+#UpArrow img,
+#DownArrow img,
+#RightArrow img {
+  border: none;
+}
+
+ul ol {
+  list-style-type: none;
+}
+
+#DownArrow {
+  height: 23px;
+  font-size: 8px;
+}
+
+#UpArrow,
+#LeftArrow,
+#RightArrow {
+  height: 24px;
+  font-size: 8px;
+}
+
+#LeftArrow,
+#RightArrow {
+  margin: 30px 5px 5px;
+}
+
+#LeftArrow:active,
+#RightArrow:active {
+  margin: 32px 5px 3px;
+}
+
+#UpArrow {
+  margin: 5px 5px 1px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+#UpArrow:active {
+  margin: 8px 5px -2px;
+}
+
+#DownArrow {
+  margin: 0 5px 5px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+#DownArrow:Active {
+  margin: 3px 5px 4px;
+}

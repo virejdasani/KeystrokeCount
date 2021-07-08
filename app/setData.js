@@ -62,11 +62,19 @@ function setMostUsedKey() {
   let mostUsedKeyPresses = sortedArr[0].timesClicked;
 
   mostUsedKey.innerHTML = `
-    Your most used key today was ‘${mostUsedKeyName}’.
+    Your most used key today was: ${mostUsedKeyName}
   `;
   mostClicks.innerHTML = `
     You pressed it ${mostUsedKeyPresses.toLocaleString()} times
   `;
+}
+
+// This is run on page startup or refresh
+function onStartup() {
+  setTotalKeysClicked();
+  setTotalMouseClicks();
+  setMostUsedKey();
+  setHeatmap();
 }
 
 var removeByAttr = function (arr, attr, value) {
@@ -83,10 +91,3 @@ var removeByAttr = function (arr, attr, value) {
   }
   return arr;
 };
-
-// This is run on page startup or refresh
-function onStartup() {
-  setTotalKeysClicked();
-  setTotalMouseClicks();
-  setMostUsedKey();
-}
