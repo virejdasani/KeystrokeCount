@@ -28,6 +28,7 @@ ipcRenderer.on("keydownEvent", (event, keyCodesPressed) => {
       // This shows the total number of keys pressed today (from setData.js)
       setTotalKeysClicked();
       setMostUsedKey();
+      setHeatmap();
       // Break out of the loop
       break;
     }

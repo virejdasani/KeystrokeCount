@@ -115,7 +115,7 @@ a:visited {
 
 ::-webkit-scrollbar {
   background-color: #181e21;
-  width: 10px !important;
+  width: 12px !important;
 }
 
 ::-webkit-scrollbar-thumb {
