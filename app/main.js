@@ -1,5 +1,3 @@
-// https://wilix-team.github.io/iohook/usage.html#generic-node-application
-
 "use strict";
 
 const {
@@ -132,6 +130,7 @@ const hideWindow = () => {
 };
 
 // ioHook
+// docs: https://wilix-team.github.io/iohook/usage.html#generic-node-application
 
 var leftClicks = 0;
 var rightClicks = 0;

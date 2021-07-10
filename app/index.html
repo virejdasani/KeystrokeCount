@@ -25,6 +25,13 @@
   </div>
   <hr class="separator">
 
+  <div id="heatmapText" class="Jost">
+    <h5 id="heatmapBarLeft">Less clicks</h5>
+    <h5 id="heatmapBarRight">More clicks</h5>
+  </div>
+  <!-- Heatmap color legend -->
+  <div id="heatmapLegend"></div>
+
   <div id="keyboard">
     <ul>
       <li><a class="key c27 fn" id="Esc"><span>Esc</span></a></li>
@@ -121,17 +128,22 @@
       </ol>
     </ul>
   </div>
-  <!-- <hr class="separator"> -->
-  <!-- <button class="Jost" id="moreButton">More</button> -->
 
-  <Keystroke id="credits"><a target="_blank" href="https://virejdasani.github.io/KeystrokeCount">Keystroke Count</a> is
-    developed by <a target="_blank" href="https://virejdasani.github.io/">Virej
-      Dasani</a></h4>
+  <div id="credits">
+    <a href="https://github.com/virejdasani/KeystrokeCount" target="_blank">Keystroke Count</a> is 100% open
+    source.
+    It is maintained by <a href="https://virejdasani.github.io/" target="_blank">Virej Dasani</a>.
+    </br>
+    Report bugs and request features <a target="_blank" href="https://github.com/virejdasani/KeystrokeCount/issues/new">
+      here</a>
+    (You can also open a <a target="_blank" href="https://github.com/virejdasani/KeystrokeCount">Pull
+      Request!</a>)
+  </div>
 
-    <script src="keys.js"></script>
-    <script src="index.js"></script>
-    <script src="setData.js"></script>
-    <script src="heatmap.js"></script>
+  <script src="keys.js"></script>
+  <script src="index.js"></script>
+  <script src="setData.js"></script>
+  <script src="heatmap.js"></script>
 
 </body>
 
