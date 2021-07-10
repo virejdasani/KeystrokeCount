@@ -325,3 +325,7 @@ ul ol {
 #DownArrow:Active {
   margin: 3px 5px 4px;
 }
+
+#timesClickedKeyText {
+  color: #333;
+}

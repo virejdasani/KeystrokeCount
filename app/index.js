@@ -13,7 +13,7 @@ if (localKeys === null) {
 
 // When a key press is detected in the main process this happens
 ipcRenderer.on("keydownEvent", (event, keyCodesPressed) => {
-  console.log(keyCodesPressed);
+  // console.log(keyCodesPressed);
   // Set localKeys to "localKeys" from localStorage
   localKeys = JSON.parse(localStorage.getItem("localKeys"));
   // If localKeys doesn't exist in localStorage, we initialize it to the keys array from keys.js

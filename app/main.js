@@ -82,7 +82,8 @@ const createWindow = () => {
   // });
 
   // This is a global shortcut to activate app with hotkey(s)
-  globalShortcut.register("Alt+Shift+k", () => {
+  // globalShortcut.register("Alt+Shift+k", () => {
+  globalShortcut.register("Alt+l", () => {
     if (window.isVisible()) {
       hideWindow();
     } else {

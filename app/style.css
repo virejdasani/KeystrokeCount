@@ -103,12 +103,12 @@ body {
 
 #heatmapBarLeft {
   display: inline-block;
-  margin-right: 120px;
+  margin-right: 14%;
 }
 
 #heatmapBarRight {
   display: inline-block;
-  margin-left: 120px;
+  margin-left: 14%;
 }
 
 ::-webkit-scrollbar {

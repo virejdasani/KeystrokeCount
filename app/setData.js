@@ -75,12 +75,14 @@ function onStartup() {
   setTotalMouseClicks();
   setMostUsedKey();
   setHeatmap();
+  virtualKeyClick();
 }
 
 function reloadKeys() {
   setTotalKeysClicked();
   setMostUsedKey();
   setHeatmap();
+  virtualKeyClick();
 }
 
 var removeByAttr = function (arr, attr, value) {

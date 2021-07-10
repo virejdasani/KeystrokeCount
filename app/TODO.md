@@ -1,0 +1,1 @@
+- Add option to toggle timesClicked on keyboard keys
