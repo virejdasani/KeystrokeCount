@@ -42,10 +42,12 @@ const createWindow = () => {
   window = new BrowserWindow({
     width: 900,
     height: 780,
+    minWidth: 800,
+    minHeight: 700,
     show: false,
-    frame: false,
+    // frame: false,
     fullscreenable: false,
-    resizable: false,
+    // resizable: false,
     alwaysOnTop: true,
     webPreferences: {
       nodeIntegration: true,
