@@ -26,7 +26,7 @@ let window = undefined;
 
 // Quit the app when the window is closed
 app.on("window-all-closed", () => {
-  app.quit();
+  hideWindow();
 });
 
 const createTray = () => {
@@ -45,10 +45,11 @@ const createWindow = () => {
     minWidth: 800,
     minHeight: 700,
     show: false,
-    // frame: false,
-    fullscreenable: false,
+    frame: false,
+
+    // fullscreenable: false,
     // resizable: false,
-    alwaysOnTop: true,
+    // alwaysOnTop: true,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
@@ -76,12 +77,12 @@ const createWindow = () => {
   });
 
   // Hide the window when it loses focus
-  window.on("blur", () => {
-    hideWindow();
-  });
+  // window.on("blur", () => {
+  // hideWindow();
+  // });
 
   // This is a global shortcut to activate app with hotkey(s)
-  globalShortcut.register("Control+l", () => {
+  globalShortcut.register("Alt+Shift+k", () => {
     if (window.isVisible()) {
       hideWindow();
     } else {
