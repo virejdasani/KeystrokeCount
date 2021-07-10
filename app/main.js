@@ -22,12 +22,7 @@ let tray = undefined;
 let window = undefined;
 
 // Hide the menu and dev tools
-// Menu.setApplicationMenu(null)
-
-app.on("ready", () => {
-  createTray();
-  createWindow();
-});
+// Menu.setApplicationMenu(null);
 
 // Quit the app when the window is closed
 app.on("window-all-closed", () => {
@@ -136,37 +131,42 @@ var leftClicks = 0;
 var rightClicks = 0;
 var keysPressed = [];
 
-// When a mouse button is clicked
-ioHook.on("mouseclick", (event) => {
-  // Check if it is a left-click
-  if (event["button"] === 1) {
-    leftClicks += 1;
-    // This sends the clicks to index.js where this num of clicks are handled
-    window.webContents.send("leftClickEvent", leftClicks);
-  }
+app.on("ready", () => {
+  createTray();
+  createWindow();
 
-  // Check if it is a right-click
-  else if (event["button"] === 2) {
-    rightClicks += 1;
-    // This sends the clicks to index.js where this num of clicks are handled
-    window.webContents.send("rightClickEvent", rightClicks);
-  }
+  // When a mouse button is clicked
+  ioHook.on("mouseclick", (event) => {
+    // Check if it is a left-click
+    if (event["button"] === 1) {
+      leftClicks += 1;
+      // This sends the clicks to index.js where this num of clicks are handled
+      window.webContents.send("leftClickEvent", leftClicks);
+    }
+
+    // Check if it is a right-click
+    else if (event["button"] === 2) {
+      rightClicks += 1;
+      // This sends the clicks to index.js where this num of clicks are handled
+      window.webContents.send("rightClickEvent", rightClicks);
+    }
+  });
+
+  // When a keyboard button is pressed
+  ioHook.on("keydown", (event) => {
+    // console.log(event);
+    // Append the keycode for the key pressed to the keysPressed array
+    keysPressed.unshift(event["keycode"]);
+    // Send the message with the new array to the renderer process
+    window.webContents.send("keydownEvent", keysPressed);
+  });
+
+  // Register and start hook
+  ioHook.start();
+
+  // Alternatively, pass true to start in DEBUG mode.
+  ioHook.start(true);
+
+  // False to disable DEBUG. Cleaner terminal output.
+  // ioHook.start(false)
 });
-
-// When a keyboard button is pressed
-ioHook.on("keydown", (event) => {
-  // console.log(event);
-  // Append the keycode for the key pressed to the keysPressed array
-  keysPressed.unshift(event["keycode"]);
-  // Send the message with the new array to the renderer process
-  window.webContents.send("keydownEvent", keysPressed);
-});
-
-// Register and start hook
-ioHook.start();
-
-// Alternatively, pass true to start in DEBUG mode.
-ioHook.start(true);
-
-// False to disable DEBUG. Cleaner terminal output.
-// ioHook.start(false)
