@@ -111,6 +111,11 @@ body {
   margin-left: 14%;
 }
 
+#update {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 ::-webkit-scrollbar {
   background-color: #181e21;
   width: 12px !important;
