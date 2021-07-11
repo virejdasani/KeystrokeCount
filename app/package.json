@@ -1,37 +1,41 @@
 {
-    "name": "keystrokecount",
-    "version": "1.0.0",
-    "description": "Count your key strokes",
-    "main": "main.js",
-    "scripts": {
-        "start": "electron ."
-    },
-    "keywords": [
-        "keystroke-count",
-        "count",
-        "key",
-        "keyboard-count"
+  "name": "keystrokecount",
+  "version": "1.0.0",
+  "description": "Data for your key strokes",
+  "main": "main.js",
+
+  "scripts": {
+    "start": "electron .",
+    "pack-darwin-x64": "electron-packager . 'Keystroke Count' --platform=darwin --arch=x64 --icon=assets/appIcons/icon.icns",
+    "pack-win32-x64": "electron-packager . 'Keystroke Count' --platform=win32 --arch=x64 --icon=assets/appIcons/icon.ico",
+    "pack-linux-x64": "electron-packager . 'Keystroke Count' --platform=linux --arch=x64 --icon=assets/appIcons/icon.png"
+  },
+  "keywords": [
+    "keystroke-count",
+    "count",
+    "key",
+    "keyboard-count"
+  ],
+  "author": "Virej Dasani",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^11.0.7",
+    "iohook": "^0.9.3",
+    "open": "^8.2.0"
+  },
+  "iohook": {
+    "targets": [
+      "node-72",
+      "electron-85"
     ],
-    "author": "Virej Dasani",
-    "license": "MIT",
-    "dependencies": {
-        "electron": "^11.0.7",
-        "iohook": "^0.9.3",
-        "open": "^8.2.0"
-    },
-    "iohook": {
-        "targets": [
-            "node-72",
-            "electron-85"
-        ],
-        "platforms": [
-            "win32",
-            "darwin",
-            "linux"
-        ],
-        "arches": [
-            "x64",
-            "ia32"
-        ]
-    }
+    "platforms": [
+      "win32",
+      "darwin",
+      "linux"
+    ],
+    "arches": [
+      "x64",
+      "ia32"
+    ]
+  }
 }
