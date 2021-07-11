@@ -110,6 +110,7 @@ const toggleWindow = () => {
 
 const showWindow = () => {
   window.show();
+  window.reload();
 };
 
 const hideWindow = () => {
