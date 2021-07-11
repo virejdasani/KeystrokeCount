@@ -17,14 +17,25 @@ function virtualKeyClick() {
       document.getElementById(thisKey.keyName).addEventListener("click", () => {
         // This is the innerHTML of the key
         let keyInnerHTML = document.getElementById(thisKey.keyName).innerHTML;
-        // The innerHTML is changed to the times that key is pressed
-        document.getElementById(
-          thisKey.keyName
-        ).innerHTML = `<span id="timesClickedKeyText">${thisKey.timesClicked}</span>`;
-        // In the 5 seconds, the initial innerHTML is restored in that key
-        setTimeout(() => {
-          document.getElementById(thisKey.keyName).innerHTML = keyInnerHTML;
-        }, 5000);
+        if (keyInnerHTML.includes("<b>")) {
+          // The innerHTML is changed to the times that key is pressed
+          document.getElementById(
+            thisKey.keyName
+          ).innerHTML = `</br><span id="timesClickedKeyText">${thisKey.timesClicked}</span>`;
+          // In the 5 seconds, the initial innerHTML is restored in that key
+          setTimeout(() => {
+            document.getElementById(thisKey.keyName).innerHTML = keyInnerHTML;
+          }, 5000);
+        } else {
+          // The innerHTML is changed to the times that key is pressed
+          document.getElementById(
+            thisKey.keyName
+          ).innerHTML = `<span id="timesClickedKeyText">${thisKey.timesClicked}</span>`;
+          // In the 5 seconds, the initial innerHTML is restored in that key
+          setTimeout(() => {
+            document.getElementById(thisKey.keyName).innerHTML = keyInnerHTML;
+          }, 5000);
+        }
       });
     }
   }
