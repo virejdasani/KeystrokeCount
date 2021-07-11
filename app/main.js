@@ -22,7 +22,7 @@ let tray = undefined;
 let window = undefined;
 
 // Hide the menu and dev tools
-// Menu.setApplicationMenu(null);
+Menu.setApplicationMenu(null);
 
 // Quit the app when the window is closed
 app.on("window-all-closed", () => {
@@ -30,7 +30,9 @@ app.on("window-all-closed", () => {
 });
 
 const createTray = () => {
-  tray = new Tray(path.join(assetsDirectory, "keystrokeCountTrayIcon@2x.png"));
+  tray = new Tray(
+    path.join(assetsDirectory, "trayIcons/keystrokeCountTrayIcon@2x.png")
+  );
   tray.on("right-click", toggleWindow);
   tray.on("double-click", toggleWindow);
   tray.on("click", function (event) {
