@@ -22,7 +22,7 @@ let tray = undefined;
 let window = undefined;
 
 // Hide the menu and dev tools
-Menu.setApplicationMenu(null);
+// Menu.setApplicationMenu(null);
 
 // Quit the app when the window is closed
 app.on("window-all-closed", () => {

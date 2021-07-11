@@ -329,3 +329,17 @@ ul ol {
 #timesClickedKeyText {
   color: #333;
 }
+
+.disabledButton {
+  background-color: #a4a4a4;
+  text-decoration: line-through;
+  color: rgb(81, 81, 81);
+  box-shadow: none;
+}
+
+.disabledButton:active {
+  background-color: #a4a4a4;
+  text-decoration: line-through;
+  color: rgb(81, 81, 81);
+  box-shadow: none;
+}
