@@ -22,7 +22,7 @@ let tray = undefined;
 let window = undefined;
 
 // Hide the menu and dev tools
-// Menu.setApplicationMenu(null);
+Menu.setApplicationMenu(null);
 
 // Quit the app when the window is closed
 app.on("window-all-closed", () => {
@@ -77,13 +77,12 @@ const createWindow = () => {
   });
 
   // Hide the window when it loses focus
-  // window.on("blur", () => {
-  // hideWindow();
-  // });
+  window.on("blur", () => {
+    hideWindow();
+  });
 
   // This is a global shortcut to activate app with hotkey(s)
-  // globalShortcut.register("Alt+Shift+k", () => {
-  globalShortcut.register("Alt+l", () => {
+  globalShortcut.register("Alt+Shift+k", () => {
     if (window.isVisible()) {
       hideWindow();
     } else {
