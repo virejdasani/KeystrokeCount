@@ -1,3 +1,9 @@
+[![Github All Releases](https://img.shields.io/github/downloads/virejdasani/keystrokecount/total.svg)]()
+[![GitHub license](https://img.shields.io/github/license/virejdasani/keystrokecount)](https://github.com/virejdasani/keystrokecount/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/virejdasani/keystrokecount)](https://GitHub.com/virejdasani/keystrokecount/releases/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![Open Source? Yes!](https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github)](https://github.com/virejdasani/keystrokecount/)
+
 # [KeystrokeCount](https://virejdasani.github.io/KeystrokeCount/)
 Data for your Keystrokes
 
